@@ -18,18 +18,39 @@
 This page ran into a problem and needs to restart.<br>
 We're just collecting some error info, and then we'll restart for you.
 </div>
-<div class="text-lg sm:text-xl lg:text-2xl mb-16">33% complete</div>
+<div class="text-lg sm:text-xl lg:text-2xl mb-16"><span id="counter">33</span>% complete</div>
 <div class="flex">
 <div class>
 <img src="https://ora.zuka.one/mainqrcode.png" alt="QR Code" class="w-32 sm:w-40 lg:w-48">
 </div>
 <div class="ml-6 text-sm sm:text-base lg:text-lg">
-For more information about this issue, visit <a href="https://github.com/zuka-tsu/simple-bsod-page" target="_blank" class="text-blue-200 underline">https://github.com/zuka-tsu/simple-bsod-page</a><br><br>
+For more information about this issue, visit <a href="https://github.com/zuka-tsu/simple-bsod-page" class="text-blue-200 underline">https://github.com/zuka-tsu/simple-bsod-page</a><br><br>
 If you call a support person, give them this info:<br>
-Stop code: SIMPLE_BSOD_LANDINGPAGE
+Stop code: SIMPLE_BSOD_PAGE
 </div>
 </div>
 </div>
+<script>
+        // Initialize counter
+        let counter = 33;
+
+        // Function to update the counter and schedule the next update
+        function updateCounter() {
+            // Increment the counter
+            counter++;
+	    counter = (counter >= 50) ? 33 : counter;
+            document.getElementById('counter').textContent = counter;
+
+            // Generate a random interval between 3 and 5 seconds (3000ms to 5000ms)
+            const randomInterval = Math.floor(Math.random() * (5000 - 3000 + 1)) + 3000;
+
+            // Schedule the next update
+            setTimeout(updateCounter, randomInterval);
+        }
+
+        // Start the counter updates
+        updateCounter();
+    </script>
 </body>
 </html>
 
